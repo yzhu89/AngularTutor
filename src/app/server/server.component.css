@@ -1,8 +1,18 @@
 .informBoxBoarder{
-  border-bottom: solid 2px;
-  border-left: solid 2px;
-  border-right: solid 2px;
-  border-top: solid 2px;
-  width: 300px;
-  border-color: cornflowerblue;
+  border-bottom: solid 1px;
+  border-left: solid 1px;
+  border-right: solid 1px;
+  border-top: solid 1px;
+  width: 500px;
+  border-color: darkgray;
+}
+
+.s{
+  font-family: "Abadi MT Condensed Extra Bold";
+}
+
+#container{
+  display: flex;
+  border: 1px bisque solid;
+  margin-top: 10px;
 }

@@ -1,50 +1,60 @@
-<h4>This is a Component Example. </h4>
-<p> Server with ID {{ serverId }}  is {{ serverStatus }} </p>
-<p> {{ 'Server' }} with ID {{ serverId }}  is {{ serverStatus }} </p>
-<p> {{ 'Server' }} with ID {{ serverId }}  is {{ getServerStatus() }} </p>
 
-<hr>
-<h4>This is a counter</h4>
-<p> {{ counter }} </p>
-<button class="btn btn-primary" (click)="counterPlus()" style="margin-right: 10px"> Add One</button>
-<button class="btn btn-primary" (click)="resetCounter()"> Reset Counter</button>
+<!--<h4>This is a counter</h4>-->
+<!--<p> {{ counter }} </p>-->
+<!--<button class="btn btn-primary" (click)="counterPlus()" style="margin-right: 10px"> Add One</button>-->
+<!--<button class="btn btn-primary" (click)="resetCounter()"> Reset Counter</button>-->
 
-<hr>
-<h4>This is a input Box with Event Binding</h4>
+<!--<hr>-->
 <div>
-  <span>User Name: </span>
-  <input type="text" (input)="onUpdateUserName($event)">
-</div>
-
-<div>
-  <span>Password: </span>
-  <input type="password">
-</div>
-<div *ngIf="isLogin" class="informBoxBoarder"> You Loggedin as {{ userName }} </div>
-<button class="btn btn-light" (click)="login()" style="margin-right: 10px"> Login </button>
-<button class="btn btn-light" (click)="signOut()"> Sign Out </button>
-
-<hr>
-<h4>This is a input Box with Two Way Data Binding</h4>
-<div>
-  <span>User Name: </span>
-  <input type="text" [(ngModel)]="userName">
-</div>
-
-<div>
-  <span>Password: </span>
-  <input type="password">
-</div>
-<div *ngIf="isLogin" class="informBoxBoarder"> You Loggedin as {{ userName }} </div>
-<button class="btn btn-light" (click)="login()" style="margin-right: 10px"> Login </button>
-<button class="btn btn-light" (click)="signOut()"> Sign Out </button>
-
-<hr>
-<h4>This is a StudentList managed by ngfor loop</h4>
-<div *ngFor="let student of students">
-  <div style="margin-bottom: 2px;border-left: solid 2px; border-right: solid 2px; border-bottom: solid 2px; border-top: solid 2px; display: flex; justify-content: space-between">
-    <div><span style="color: cornflowerblue; margin-right: 5px">Student Name: </span> <span> {{ student.name }}</span></div>
-
-    <div><span style="color: cornflowerblue; margin-right: 5px;">Student Major: </span> <span>{{ student.major }}</span></div>
+  <h4>请添加您的用料</h4>
+  <br>
+  <div>
+    <span class="s">用料1名: </span>
+    <input type="text" [(ngModel)]="materialName1">
   </div>
+
+  <div>
+    <span class="s">用料2名: </span>
+    <input type="text" [(ngModel)]="materialName2">
+  </div>
+  <p></p>
+  <div *ngIf="haveRecipe" class="informBoxBoarder"> 您可以用{{materialName1}}和{{materialName2}}做： {{ recipeName }} </div>
+  <h1></h1>
+  <button class="btn btn-outline-primary" (click)="checkRecipe()" style="margin-right: 10px"> 生成菜谱 </button>
+  <button class="btn btn-outline-primary" (click)="clean()"> 清空 </button>
 </div>
+<!--<hr>-->
+<!--<h4>This is a input Box with Two Way Data Binding</h4>-->
+<!--<div>-->
+<!--  <span>User Name: </span>-->
+<!--  <input type="text" [(ngModel)]="userName">-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <span>Password: </span>-->
+<!--  <input type="password">-->
+<!--</div>-->
+<!--<div *ngIf="isLogin" class="informBoxBoarder"> You Loggedin as {{ userName }} </div>-->
+<!--<button class="btn btn-light" (click)="login()" style="margin-right: 10px"> Login </button>-->
+<!--<button class="btn btn-light" (click)="signOut()"> Sign Out </button>-->
+
+<!--<hr>-->
+<!--<h4>This is a StudentList managed by ngfor loop</h4>-->
+<!--<div *ngFor="let student of students">-->
+<!--  <div style="margin-bottom: 2px;border-left: solid 2px; border-right: solid 2px; border-bottom: solid 2px; border-top: solid 2px; display: flex; justify-content: space-between">-->
+<!--    <div><span style="color: cornflowerblue; margin-right: 5px">Student Name: </span> <span> {{ student.name }}</span></div>-->
+
+<!--    <div><span style="color: cornflowerblue; margin-right: 5px;">Student Major: </span> <span>{{ student.major }}</span></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<hr>-->
+<!--<h5>This is a StudentList managed by ngfor loop</h5>-->
+<!--<div *ngFor="let r of recipes">-->
+<!--  <div style="margin-bottom: 2px;border-left: solid 2px; border-right: solid 2px; border-bottom: solid 2px; border-top: solid 2px; display: flex; justify-content: space-between">-->
+<!--    <div><span style="color: cornflowerblue; margin-right: 5px">Name1: </span> <span> {{ r.name1 }}</span></div>-->
+
+<!--    <div><span style="color: cornflowerblue; margin-right: 5px;">Name2: </span> <span>{{ r.name2 }}</span></div>-->
+<!--    <div><span style="color: cornflowerblue; margin-right: 5px;">DishName: </span> <span>{{ r.dishName }}</span></div>-->
+<!--  </div>-->
+<!--</div>-->
